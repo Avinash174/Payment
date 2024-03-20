@@ -1,6 +1,7 @@
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:payment/gpay.dart';
+import 'package:payment/upi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,8 +41,14 @@ class _GooglepayScreenState extends State<GooglepayScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: () {},
-            child: Text('UPI Tansaction'),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => UpiTransaction()));
+            },
+            child: const Text('UPI Tansaction'),
+          ),
+          const SizedBox(
+            height: 50,
           ),
           Center(
             child: ElevatedButton(
@@ -50,7 +57,7 @@ class _GooglepayScreenState extends State<GooglepayScreen> {
                   androidPackageName: 'net.pulsesecure.pulsesecure',
                 );
               },
-              child: Text('Gpay Transaction'),
+              child: const Text('Gpay Transaction'),
             ),
           ),
         ],
