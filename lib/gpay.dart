@@ -58,17 +58,17 @@ class _GpayScreenState extends State<GpayScreen> {
     paymentConfiguration: PaymentConfiguration.fromJsonString(defaultApplePay),
     paymentItems: const [
       PaymentItem(
-        amount: '0.12',
+        amount: '12',
         status: PaymentItemStatus.final_price,
         label: 'Item A',
       ),
       PaymentItem(
-        amount: '0.2',
+        amount: '2',
         status: PaymentItemStatus.final_price,
         label: 'Item B',
       ),
       PaymentItem(
-        amount: '0.26',
+        amount: '26',
         status: PaymentItemStatus.final_price,
         label: 'Item C',
       ),
