@@ -1,3 +1,4 @@
+import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,12 +38,29 @@ class _GpayScreenState extends State<GpayScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Gpay'),
+          Center(
+            child: ElevatedButton(
+              onPressed: () async {
+                var openAppResult = await LaunchApp.openApp(
+                  androidPackageName: 'com.google.android.apps.walletnfcrel',
+                );
+              },
+              child: Text('Gpay'),
+            ),
           )
         ],
       ),
     );
   }
 }
+
+// void _launchGooglePay() async {
+//   // The deep link for Google Pay
+//   const url = 'https://pay.google.com';
+
+//   if (await canLaunch(url)) {
+//     await launch(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }
