@@ -39,6 +39,10 @@ class _GooglepayScreenState extends State<GooglepayScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('UPI Tansaction'),
+          ),
           Center(
             child: ElevatedButton(
               onPressed: () async {
@@ -46,7 +50,7 @@ class _GooglepayScreenState extends State<GooglepayScreen> {
                   androidPackageName: 'net.pulsesecure.pulsesecure',
                 );
               },
-              child: Text('Gpay'),
+              child: Text('Gpay Transaction'),
             ),
           ),
         ],
