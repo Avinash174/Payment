@@ -44,7 +44,7 @@ class _GpayScreenState extends State<GpayScreen> {
     ],
   );
   var applePayButton = ApplePayButton(
-    type: ApplePayButtonType.order,
+    type: ApplePayButtonType.buy,
     width: double.infinity,
     height: 50,
     onPaymentResult: ((result) => debugPrint('Payment result $result')),
