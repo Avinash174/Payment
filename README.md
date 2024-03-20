@@ -1,4 +1,4 @@
-# Payment [App Gpay + ApplePay]
+# Payment App [App Gpay + ApplePay]
 
 A New Flutter Payment Project.
 
