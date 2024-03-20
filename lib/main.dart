@@ -1,5 +1,6 @@
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:payment/gpay.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,19 +19,19 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const GpayScreen(),
+      home: const GooglepayScreen(),
     );
   }
 }
 
-class GpayScreen extends StatefulWidget {
-  const GpayScreen({super.key});
+class GooglepayScreen extends StatefulWidget {
+  const GooglepayScreen({super.key});
 
   @override
-  State<GpayScreen> createState() => _GpayScreenState();
+  State<GooglepayScreen> createState() => _GooglepayScreenState();
 }
 
-class _GpayScreenState extends State<GpayScreen> {
+class _GooglepayScreenState extends State<GooglepayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,25 +43,27 @@ class _GpayScreenState extends State<GpayScreen> {
             child: ElevatedButton(
               onPressed: () async {
                 var openAppResult = await LaunchApp.openApp(
-                  androidPackageName: 'com.google.android.apps.walletnfcrel',
+                  androidPackageName: 'net.pulsesecure.pulsesecure',
                 );
               },
               child: Text('Gpay'),
             ),
-          )
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => payScreen(),
+            ),
+          );
+        },
+        child: const Icon(
+          Icons.payment,
+        ),
       ),
     );
   }
 }
-
-// void _launchGooglePay() async {
-//   // The deep link for Google Pay
-//   const url = 'https://pay.google.com';
-
-//   if (await canLaunch(url)) {
-//     await launch(url);
-//   } else {
-//     throw 'Could not launch $url';
-//   }
-// }

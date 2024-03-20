@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:pay/pay.dart';
 import 'package:payment/payment_config.dart';
 
-class GpayScreen extends StatefulWidget {
-  const GpayScreen({super.key});
+class payScreen extends StatefulWidget {
+  const payScreen({super.key});
 
   @override
-  State<GpayScreen> createState() => _GpayScreenState();
+  State<payScreen> createState() => _payScreenState();
 }
 
-class _GpayScreenState extends State<GpayScreen> {
+class _payScreenState extends State<payScreen> {
   String os = Platform.operatingSystem;
 
   @override
