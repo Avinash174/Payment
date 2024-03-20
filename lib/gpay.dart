@@ -15,11 +15,11 @@ class _GpayScreenState extends State<GpayScreen> {
   String os = Platform.operatingSystem;
 
   @override
-  void initState() {
-    googlePayButton;
-    // applePayButton;
-    super.initState();
-  }
+  // void initState() {
+  //   googlePayButton;
+ //   applePayButton;
+  //   super.initState();
+  // }
 
   var googlePayButton = GooglePayButton(
     width: double.infinity,
