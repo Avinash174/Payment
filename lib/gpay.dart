@@ -50,6 +50,9 @@ class _GpayScreenState extends State<GpayScreen> {
     onPaymentResult: ((result) => debugPrint('Payment result $result')),
     style: ApplePayButtonStyle.black,
     paymentConfiguration: PaymentConfiguration.fromJsonString(defaultApplePay),
+    loadingIndicator: const Center(
+      child: CircularProgressIndicator(),
+    ),
     paymentItems: const [
       PaymentItem(
         amount: '12',
