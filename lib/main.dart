@@ -1,6 +1,5 @@
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:payment/gpay.dart';
 import 'package:payment/upi.dart';
 
 void main() {
@@ -67,7 +66,7 @@ class _GooglepayScreenState extends State<GooglepayScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => payScreen(),
+              builder: (_) => MyApp(),
             ),
           );
         },
